@@ -22,6 +22,7 @@ func new_game():
 	$Player.start($StartPosition.position)
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready!")
+	get_tree().call_group("mobs", "queue_free")
 	$StartTimer.start()
 
 func _on_start_timer_timeout():
